@@ -1,0 +1,110 @@
+:root {
+  --bg: #0f1115;
+  --card: #1a1d24;
+  --accent: #3b82f6;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --border: #2a2d36;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.app { max-width: 480px; margin: 0 auto; padding: 24px 16px; }
+
+.app-header h1 { font-size: 22px; margin: 0 0 16px; }
+
+.tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab.active { color: #fff; border-color: var(--accent); background: #1e2a44; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.display { padding: 16px 8px; text-align: right; min-height: 60px; }
+.expr { font-size: 28px; word-break: break-all; }
+.result { font-size: 16px; color: var(--muted); margin-top: 4px; }
+
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+
+.calc-btn {
+  padding: 16px 0;
+  font-size: 18px;
+  background: #22252e;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  cursor: pointer;
+}
+.calc-btn:active { background: #2d313c; }
+.calc-btn.equals { background: var(--accent); color: #fff; }
+.calc-btn.clear { color: #f87171; }
+
+.text-input {
+  width: 100%;
+  background: #0f1115;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  padding: 10px;
+  font-size: 14px;
+  resize: vertical;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 10px 0 16px;
+}
+
+.convert-grid { display: flex; flex-direction: column; gap: 8px; }
+
+.convert-row {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  background: #0f1115;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.convert-label { font-size: 12px; color: var(--muted); }
+.convert-value { font-size: 13px; word-break: break-word; }
+
+.copy-btn {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.copy-btn:disabled { opacity: 0.4; cursor: default; }
